@@ -682,7 +682,7 @@
 <li>white-space：空白符的处理</li>
 <li>unicode-bidi：设置文本的方向</li>
 </ul>
-<ol>
+<ol start="3">
 <li><strong>盒子模型的属性</strong>：width、height、margin、border、padding</li>
 <li><strong>背景属性</strong>：background、background-color、background-image、background-repeat、background-position、background-attachment</li>
 <li><strong>定位属性</strong>：float、clear、position、top、right、bottom、left、min-width、min-height、max-width、max-height、overflow、clip、z-index</li>
@@ -793,7 +793,7 @@
 <li><strong>position: absolute</strong>：通过使用绝对定位将元素移除可视区域内，以此来实现元素的隐藏。</li>
 <li><strong>z-index: 负值</strong>：来使其他元素遮盖住该元素，以此来实现隐藏。</li>
 <li><strong>clip&#x2F;clip-path</strong> ：使用元素裁剪的方法来实现元素的隐藏，这种方法下，元素仍在页面中占据位置，但是不会响应绑定的监听事件。</li>
-<li>**transform: scale(0,0)**：将元素缩放为 0，来实现元素的隐藏。这种方法下，元素仍在页面中占据位置，但是不会响应绑定的监听事件。</li>
+<li>**transform:scale(0,0)**：将元素缩放为 0，来实现元素的隐藏。这种方法下，元素仍在页面中占据位置，但是不会响应绑定的监听事件。</li>
 </ul>
 <h2 id="link和-import的区别"><a href="#link和-import的区别" class="headerlink" title="link和@import的区别"></a>link和@import的区别</h2><p>两者都是外部引用CSS的方式，它们的区别如下：</p>
 <ul>
@@ -822,12 +822,12 @@
 <h2 id="伪元素和伪类的区别和作用？"><a href="#伪元素和伪类的区别和作用？" class="headerlink" title="伪元素和伪类的区别和作用？"></a><strong>伪元素和伪类的区别和作用？</strong></h2><ul>
 <li>伪元素：在内容元素的前后插入额外的元素或样式，但是这些元素实际上并不在文档中生成。它们只在外部显示可见，但不会在文档的源代码中找到它们，因此，称为“伪”元素。例如：</li>
 </ul>
-<pre class="highlight"><code class="hljs css"><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">::before</span> &#123;<span class="hljs-attribute">content</span>:<span class="hljs-string">&quot;第一章：&quot;</span>;&#125;<br><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">::after</span> &#123;<span class="hljs-attribute">content</span>:<span class="hljs-string">&quot;Hot!&quot;</span>;&#125;<br><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">::first-line</span> &#123;<span class="hljs-attribute">background</span>:red;&#125;<br><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">::first-letter</span> &#123;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">30px</span>;&#125;<br>复制代码<br></code></pre>
+<pre class="highlight"><code class="hljs css"><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">::before</span> &#123;<br>  <span class="hljs-attribute">content</span>:<span class="hljs-string">&quot;第一章：&quot;</span>;<br>&#125;<br><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">::after</span> &#123;<br>  <span class="hljs-attribute">content</span>:<span class="hljs-string">&quot;Hot!&quot;</span>;<br>&#125;<br><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">::first-line</span> &#123;<br>  <span class="hljs-attribute">background</span>:red;<br>&#125;<br><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">::first-letter</span> &#123;<br>  <span class="hljs-attribute">font-size</span>:<span class="hljs-number">30px</span>;<br>&#125;<br></code></pre>
 
 <ul>
 <li>伪类：将特殊的效果添加到特定选择器上。它是已有元素上添加类别的，不会产生新的元素。例如：</li>
 </ul>
-<pre class="highlight"><code class="hljs css"><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> &#123;<span class="hljs-attribute">color</span>: <span class="hljs-number">#FF00FF</span>&#125;<br><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first</span>-child &#123;<span class="hljs-attribute">color</span>: red&#125;<br>复制代码<br></code></pre>
+<pre class="highlight"><code class="hljs css"><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> &#123;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#FF00FF</span><br>&#125;<br><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first</span>-child &#123;<br>  <span class="hljs-attribute">color</span>: red<br>&#125;<br></code></pre>
 
 <p><strong>总结：</strong> 伪类是通过在元素选择器上加⼊伪类改变元素状态，⽽伪元素通过对元素的操作进⾏对元素的改变。</p>
 <h2 id="对requestAnimationframe的理解"><a href="#对requestAnimationframe的理解" class="headerlink" title="对requestAnimationframe的理解"></a>对requestAnimationframe的理解</h2><p>实现动画效果的方法比较多，Javascript 中可以通过定时器 setTimeout 来实现，CSS3 中可以使用 transition 和 animation 来实现，HTML5 中的 canvas 也可以实现。除此之外，HTML5 提供一个专门用于请求动画的API，那就是 requestAnimationFrame，顾名思义就是<strong>请求动画帧</strong>。</p>
@@ -848,7 +848,7 @@
 <li>settimeout任务被放入异步队列，只有当主线程任务执行完后才会执行队列中的任务，因此实际执行时间总是比设定时间要晚；</li>
 <li>settimeout的固定时间间隔不一定与屏幕刷新间隔时间相同，会引起丢帧。</li>
 </ul>
-<h2 id="对盒模型的理解"><a href="#对盒模型的理解" class="headerlink" title="对盒模型的理解"></a>对盒模型的理解</h2><p>CSS3中的盒模型有以下两种：标准盒子模型、IE盒子模型 <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4544d45b5a0c47a58c0c33a7d8fbac09~tplv-k3u1fbpfcp-watermark.awebp" alt="img" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4544d45b5a0c47a58c0c33a7d8fbac09~tplv-k3u1fbpfcp-watermark.awebp" class="lozad post-image"> <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4040de9fef1a49f4ae0ae66039edcfe0~tplv-k3u1fbpfcp-watermark.awebp" alt="img" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4040de9fef1a49f4ae0ae66039edcfe0~tplv-k3u1fbpfcp-watermark.awebp" class="lozad post-image"> 盒模型都是由四个部分组成的，分别是margin、border、padding和content。</p>
+<h2 id="对盒模型的理解"><a href="#对盒模型的理解" class="headerlink" title="对盒模型的理解"></a>对盒模型的理解</h2><p>CSS3中的盒模型有以下两种：标准盒子模型、IE盒子模型；盒模型都是由四个部分组成的，分别是margin、border、padding和content。</p>
 <p>标准盒模型和IE盒模型的区别在于设置width和height时，所对应的范围不同：</p>
 <ul>
 <li>标准盒模型的width和height属性的范围只包含了content，</li>
@@ -1520,12 +1520,12 @@
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2024-11-04</div>
-        <a href="/2024/11/04/24110401/"><div class="recent-posts-item-content">vue面试题</div></a>
+        <a href="/2024/11/04/24110400/"><div class="recent-posts-item-content">js面试题</div></a>
       </div>
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2024-11-04</div>
-        <a href="/2024/11/04/24110400/"><div class="recent-posts-item-content">js面试题</div></a>
+        <a href="/2024/11/04/24110401/"><div class="recent-posts-item-content">vue面试题</div></a>
       </div>
     
       <div class="recent-posts-item">
@@ -1535,7 +1535,7 @@
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2024-11-04</div>
-        <a href="/2024/11/04/24110405/"><div class="recent-posts-item-content">性能面试题</div></a>
+        <a href="/2024/11/04/24110402/"><div class="recent-posts-item-content">react面试题</div></a>
       </div>
     
   </div>
