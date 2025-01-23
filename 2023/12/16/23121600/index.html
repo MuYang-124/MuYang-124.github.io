@@ -599,6 +599,7 @@
     <h2 id="判断是不是充满"><a href="#判断是不是充满" class="headerlink" title="判断是不是充满"></a>判断是不是充满</h2><p>ref拿整个div的宽度 然后通过worldBoxBounds拿到当前宽度 判断div的宽度是不是小于worldBoxBounds里面的宽度 如果是就充满</p>
 <h2 id="zoom过渡"><a href="#zoom过渡" class="headerlink" title="zoom过渡"></a>zoom过渡</h2><p>后面准备增加一下，ps：25-01-23。</p>
 <h2 id="如何实现-缩放画布始终居中"><a href="#如何实现-缩放画布始终居中" class="headerlink" title="如何实现 缩放画布始终居中"></a>如何实现 缩放画布始终居中</h2><pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">// 监听</span><br>app.<span class="hljs-property">tree</span>.<span class="hljs-title function_">on</span>(<span class="hljs-title class_">ZoomEvent</span>.<span class="hljs-property">END</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params">e: ZoomEvent</span>) &#123;<br>  <span class="hljs-comment">// 如果外面的宽度大于当前这个组件的宽度才居中</span><br>  <span class="hljs-keyword">if</span> (width &gt; app.<span class="hljs-property">tree</span>.<span class="hljs-property">children</span>[<span class="hljs-number">0</span>].<span class="hljs-property">worldBoxBounds</span>.<span class="hljs-property">width</span>) &#123;<br>    <span class="hljs-comment">// 居中逻辑</span><br>    app.<span class="hljs-property">tree</span>.<span class="hljs-title function_">zoom</span>(<span class="hljs-string">&#x27;fit&#x27;</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">true</span>)<br>  &#125;<br>&#125;)<br></code></pre>
+
 <p>其中：</p>
 <ul>
 <li>boxBounds	元素在 内部坐标系 中的基础边界（OBB 包围盒）</li>
@@ -606,6 +607,7 @@
 <li>worldBoxBounds	元素在 世界坐标系 中的基础边界（AABB 包围盒）</li>
 <li>worldRenderBounds	元素在 世界坐标系 中的渲染边界（AABB 包围盒）</li>
 </ul>
+<p><img  srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="https://i.miji.bid/2025/01/23/0b289b14a5481f621b542c63934e9ae8.png" class="lozad post-image"src="https://i.miji.bid/2025/01/23/0b289b14a5481f621b542c63934e9ae8.png"></p>
 
   </div>
   <div>
@@ -690,12 +692,12 @@
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2025-01-02</div>
-        <a href="/2025/01/02/25010201/"><div class="recent-posts-item-content">react数据管理面试题</div></a>
+        <a href="/2025/01/02/25010200/"><div class="recent-posts-item-content">react组件基础面试题</div></a>
       </div>
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2025-01-02</div>
-        <a href="/2025/01/02/25010200/"><div class="recent-posts-item-content">react组件基础面试题</div></a>
+        <a href="/2025/01/02/25010201/"><div class="recent-posts-item-content">react数据管理面试题</div></a>
       </div>
     
       <div class="recent-posts-item">
