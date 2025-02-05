@@ -334,7 +334,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-text">核心思想</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="toc-text">快速排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="toc-text">归并排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">空间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-text">稳定性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%85%B3%E9%94%AE%E7%82%B9"><span class="toc-text">性能关键点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-text">核心思想</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="toc-text">快速排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="toc-text">归并排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">空间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-text">稳定性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%85%B3%E9%94%AE%E7%82%B9"><span class="toc-text">性能关键点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#code"><span class="toc-text">code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
       </div>
     </article>
   
@@ -548,7 +548,7 @@
     
     
       <span class="dot"></span>
-      <span>682 字</span>
+      <span>1k 字</span>
     
   </div>
   
@@ -606,7 +606,43 @@
 <li>适合处理大数据或外部排序（如磁盘文件排序）。</li>
 </ul>
 <h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>快速排序：适用于内存排序，尤其是对速度要求高、数据随机的场景；如 C 标准库的 qsort、Java 的 Arrays.sort()（对基本类型排序）。<br>归并排序：适合需要稳定性或外排序的场景（如大规模数据无法一次性加载到内存）；如数据库排序、Python 的 sorted() 函数（稳定排序）。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">// 合并两个已排序的数组</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">merge</span>(<span class="hljs-params">left, right</span>) &#123;<br>  <span class="hljs-keyword">let</span> result = [];<br>  <span class="hljs-keyword">let</span> leftIndex = <span class="hljs-number">0</span>, rightIndex = <span class="hljs-number">0</span>;<br><br>  <span class="hljs-comment">// 比较两个数组的元素，按顺序插入结果数组</span><br>  <span class="hljs-keyword">while</span> (leftIndex &lt; left.<span class="hljs-property">length</span> &amp;&amp; rightIndex &lt; right.<span class="hljs-property">length</span>) &#123;<br>    <span class="hljs-keyword">if</span> (left[leftIndex] &lt;= right[rightIndex]) &#123;<br>      result.<span class="hljs-title function_">push</span>(left[leftIndex]);<br>      leftIndex++;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      result.<span class="hljs-title function_">push</span>(right[rightIndex]);<br>      rightIndex++;<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-comment">// 将剩余元素拼接到结果数组</span><br>  <span class="hljs-keyword">return</span> result<br>    .<span class="hljs-title function_">concat</span>(left.<span class="hljs-title function_">slice</span>(leftIndex))  <span class="hljs-comment">// 左数组剩余部分</span><br>    .<span class="hljs-title function_">concat</span>(right.<span class="hljs-title function_">slice</span>(rightIndex)); <span class="hljs-comment">// 右数组剩余部分</span><br>&#125;<br><br><span class="hljs-comment">// 归并排序主函数</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">mergeSort</span>(<span class="hljs-params">arr</span>) &#123;<br>  <span class="hljs-comment">// 递归终止条件：数组长度为 0 或 1 时直接返回</span><br>  <span class="hljs-keyword">if</span> (arr.<span class="hljs-property">length</span> &lt;= <span class="hljs-number">1</span>) &#123;<br>    <span class="hljs-keyword">return</span> arr;<br>  &#125;<br><br>  <span class="hljs-comment">// 分割数组</span><br>  <span class="hljs-keyword">const</span> mid = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(arr.<span class="hljs-property">length</span> / <span class="hljs-number">2</span>);<br>  <span class="hljs-keyword">const</span> left = arr.<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>, mid);  <span class="hljs-comment">// 左半部分（不包含 mid）</span><br>  <span class="hljs-keyword">const</span> right = arr.<span class="hljs-title function_">slice</span>(mid);    <span class="hljs-comment">// 右半部分（包含 mid）</span><br><br>  <span class="hljs-comment">// 递归排序并合并</span><br>  <span class="hljs-keyword">return</span> <span class="hljs-title function_">merge</span>(<br>    <span class="hljs-title function_">mergeSort</span>(left),  <span class="hljs-comment">// 递归排序左半部分</span><br>    <span class="hljs-title function_">mergeSort</span>(right)  <span class="hljs-comment">// 递归排序右半部分</span><br>  );<br>&#125;<br><br><span class="hljs-comment">// 示例测试</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">mergeSort</span>([<span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">2</span>]));        <span class="hljs-comment">// 输出: [1, 2, 3, 4]</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">mergeSort</span>([<span class="hljs-number">5</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>])); <span class="hljs-comment">// 输出: [2, 2, 3, 5, 5, 7]</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">mergeSort</span>([-<span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, -<span class="hljs-number">2</span>]));    <span class="hljs-comment">// 输出: [-3, -2, 0, 10]</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">mergeSort</span>([]));                 <span class="hljs-comment">// 输出: []</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">mergeSort</span>([<span class="hljs-number">1</span>]));                <span class="hljs-comment">// 输出: [1]</span><br></code></pre>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table>
+<thead>
+<tr>
+<th><strong>特性</strong></th>
+<th>快速排序</th>
+<th>归并排序</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>分治策略</strong></td>
+<td>先分区后递归</td>
+<td>先递归后合并</td>
+</tr>
+<tr>
+<td><strong>额外空间</strong></td>
+<td><code>O(log n)</code>（递归栈）</td>
+<td><code>O(n)</code>（合并数组）</td>
+</tr>
+<tr>
+<td><strong>稳定性</strong></td>
+<td>不稳定</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td><strong>最坏时间复杂度</strong></td>
+<td><code>O(n²)</code></td>
+<td><code>O(n log n)</code></td>
+</tr>
+<tr>
+<td><strong>适用场景</strong></td>
+<td>内存排序、随机数据</td>
+<td>外排序、稳定性要求</td>
+</tr>
+</tbody></table>
+<ul>
 <li>选择快速排序：追求实际运行速度，内存有限，且不要求稳定性。</li>
 <li>选择归并排序：需要稳定性、处理外排序，或接受额外空间开销。</li>
 </ul>
@@ -644,7 +680,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-text">核心思想</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="toc-text">快速排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="toc-text">归并排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">空间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-text">稳定性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%85%B3%E9%94%AE%E7%82%B9"><span class="toc-text">性能关键点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-text">核心思想</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="toc-text">快速排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="toc-text">归并排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">空间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-text">稳定性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%85%B3%E9%94%AE%E7%82%B9"><span class="toc-text">性能关键点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#code"><span class="toc-text">code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
 </div>
 
             </main>
@@ -659,7 +695,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-text">核心思想</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="toc-text">快速排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="toc-text">归并排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">空间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-text">稳定性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%85%B3%E9%94%AE%E7%82%B9"><span class="toc-text">性能关键点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-text">核心思想</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="toc-text">快速排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="toc-text">归并排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">空间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-text">稳定性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%85%B3%E9%94%AE%E7%82%B9"><span class="toc-text">性能关键点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#code"><span class="toc-text">code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
     </article>
   
   
