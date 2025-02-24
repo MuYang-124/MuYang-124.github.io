@@ -3,8 +3,8 @@
 title: 霜序廿的个人网站
 author: 霜序廿
 # put the logo on the ${blog_path}/source/img/${picname}.png or use urls
-logo_img: https://q2.qlogo.cn/headimg_dl?dst_uin=2749909223&spec=5
-author_img: https://q2.qlogo.cn/headimg_dl?dst_uin=2749909223&spec=5
+logo_img: https://q2.qlogo.cn/headimg_dl?dst_uin=2604121966&spec=5
+author_img: https://q2.qlogo.cn/headimg_dl?dst_uin=2604121966&spec=5
 author_description: 一个爱算法的小前端
 #------------------------
 # Navbar config
@@ -214,7 +214,8 @@ artitalk:
   appKey: 
 editedArticle:
   enable: true
-  repo: https://github.com/shuangxunian/shuangxunian.github.io
+  repo: https://github.com/MuYang-124/MuYang-124.github.io
+
 #------------------------
 # minify config
 # css minify uses autoprefixer and clean-css
